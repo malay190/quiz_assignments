@@ -1,15 +1,15 @@
 import random
 
 
-#library for hangman
-movi = ["baghi","ddlj","raazi","parmanu","newton"]
-actor = ["hritik","varun","sidharth","arjun"]
+#library for the hangman
+movi = ["baaghi","ddlj","raazi","parmanu","newton"]
+actor = ["hritik","varun","sidharth","arjun","karan"]
 profession = ["student","teacher","enterpreneur","farmer","pilote"]
-fastfood = ["choumin","springroll","sandwich","noodles","burger"]
+fastfood = ["choumin","springroll","sandwich","noodles","burgers"]
 list_of_list = [movi,actor,profession,fastfood]
 
 
-#some functions for hangman
+#some functions for the hangman
 def shuffel_and_choose(list1):
     random.shuffle(list1)
     return list1[0]
@@ -21,7 +21,7 @@ def find_random_list_name(w):
     elif w == profession:
         list_name = "profession"
     else:
-        list_name = "fast food"
+        list_name = "fast-food"
     return list_name
 def replace(search_word):
     under_score_subtracted = 0
@@ -32,7 +32,7 @@ def replace(search_word):
     return under_score_subtracted
 
 
-#some prepration and global variables :)
+#some preparation and global variables :)
 random_list = shuffel_and_choose(list_of_list)
 random_list_name = find_random_list_name(random_list)
 random_word = list(shuffel_and_choose(random_list))
@@ -42,7 +42,7 @@ for x in random_word:
 under_score_number = len(random_word)
 user_try=0
 
-#welcome screen
+#welcome screen(root-window)
 print("*"*40)
 print("*"*40)
 print("*"*16,"HANGMAN","*"*16)
@@ -52,7 +52,7 @@ print("*"*40)
 
 
 
-# some default first lines
+# some default starting lines
 user_name=input("enter your name :")
 d=input("select difficulty by entering choice number(int type) :\n1.>easy\n2.>hard\n")
 if d.isdigit():
@@ -87,7 +87,7 @@ if difficulty==2:
             print("hurrey ..,you win...,in %d try.." % (user_try))
 
 elif difficulty == 1:
-#easy level
+#easy_level
     index_list = []
     for i in range(len(random_word)):
         index_list.append(i)
